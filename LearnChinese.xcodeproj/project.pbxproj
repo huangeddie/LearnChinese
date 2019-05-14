@@ -15,6 +15,7 @@
 		2CE75797228A40780061F931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE75795228A40780061F931 /* LaunchScreen.storyboard */; };
 		2CE757A2228A40780061F931 /* LearnChineseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE757A1228A40780061F931 /* LearnChineseTests.swift */; };
 		2CE757AD228A40780061F931 /* LearnChineseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE757AC228A40780061F931 /* LearnChineseUITests.swift */; };
+		2CE757BB228A53C40061F931 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE757BA228A53C40061F931 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2CE757A8228A40780061F931 /* LearnChineseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnChineseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE757AC228A40780061F931 /* LearnChineseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnChineseUITests.swift; sourceTree = "<group>"; };
 		2CE757AE228A40780061F931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CE757BA228A53C40061F931 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2CE75795228A40780061F931 /* LaunchScreen.storyboard */,
 				2CE75798228A40780061F931 /* Info.plist */,
 				2CE75790228A40770061F931 /* LearnChinese.xcdatamodeld */,
+				2CE757BA228A53C40061F931 /* DataController.swift */,
 			);
 			path = LearnChinese;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE7578C228A40770061F931 /* MainViewController.swift in Sources */,
+				2CE757BB228A53C40061F931 /* DataController.swift in Sources */,
 				2CE75792228A40770061F931 /* LearnChinese.xcdatamodeld in Sources */,
 				2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */,
 			);

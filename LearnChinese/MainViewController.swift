@@ -13,6 +13,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let dc = DataController(completionClosure: self.foo)
+        
+    }
+    
+    func foo() -> Void {
+        print("Hello")
     }
 
 
