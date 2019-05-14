@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE75789228A40770061F931 /* AppDelegate.swift */; };
-		2CE7578C228A40770061F931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7578B228A40770061F931 /* ViewController.swift */; };
+		2CE7578C228A40770061F931 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7578B228A40770061F931 /* MainViewController.swift */; };
 		2CE7578F228A40770061F931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE7578D228A40770061F931 /* Main.storyboard */; };
 		2CE75792228A40770061F931 /* LearnChinese.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CE75790228A40770061F931 /* LearnChinese.xcdatamodeld */; };
 		2CE75794228A40780061F931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE75793228A40780061F931 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		2CE75786228A40770061F931 /* LearnChinese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnChinese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE75789228A40770061F931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CE7578B228A40770061F931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CE7578B228A40770061F931 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2CE7578E228A40770061F931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CE75791228A40770061F931 /* LearnChinese.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearnChinese.xcdatamodel; sourceTree = "<group>"; };
 		2CE75793228A40780061F931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE75789228A40770061F931 /* AppDelegate.swift */,
-				2CE7578B228A40770061F931 /* ViewController.swift */,
+				2CE7578B228A40770061F931 /* MainViewController.swift */,
 				2CE7578D228A40770061F931 /* Main.storyboard */,
 				2CE75793228A40780061F931 /* Assets.xcassets */,
 				2CE75795228A40780061F931 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE7578C228A40770061F931 /* ViewController.swift in Sources */,
+				2CE7578C228A40770061F931 /* MainViewController.swift in Sources */,
 				2CE75792228A40770061F931 /* LearnChinese.xcdatamodeld in Sources */,
 				2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */,
 			);
