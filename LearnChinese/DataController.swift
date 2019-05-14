@@ -13,6 +13,14 @@ import CoreData
 class DataController: NSObject {
     var managedObjectContext: NSManagedObjectContext
     init(completionClosure: @escaping () -> ()) {
+        let persistentContainer = NSPersistentContainer(name: "LearnChinese")
+        persistentContainer.loadPersistentStores() { (description, error) in
+            if let error = error {
+                fatalError("Failed to load Core Data stack: \(error)")
+            }
+            completionClosure()
+        }
+        
         //This resource is the same name as your xcdatamodeld contained in your project
         guard let modelURL = Bundle.main.url(forResource: "LearnChinese", withExtension:"momd") else {
             fatalError("Error loading model from bundle")

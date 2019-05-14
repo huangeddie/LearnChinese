@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
 
@@ -15,6 +16,26 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let dc = DataController(completionClosure: self.foo)
+        
+        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: dc.managedObjectContext) as! Entry
+        entry.text = "Hello World"
+        entry.name = "Foo"
+        entry.created = Date.distantPast
+        
+        do {
+            try dc.managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+        
+        let entriesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
+        
+        do {
+            let fetchedEntries = try dc.managedObjectContext.fetch(entriesFetch) as! [Entry]
+            print(fetchedEntries)
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
         
     }
     
