@@ -10,39 +10,33 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
-
+    @IBOutlet weak var textLabel: UILabel!
+    
+    var currEntry: Entry?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let dc = DataController(completionClosure: self.foo)
-        
-        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: dc.managedObjectContext) as! Entry
-        entry.text = "Hello World"
-        entry.name = "Foo"
-        entry.created = Date.distantPast
-        
-        do {
-            try dc.managedObjectContext.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
+        update()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        update()
+    }
+    
+    private func update() {
+        let dc = DataController {}
         
         let entriesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
         
         do {
-            let fetchedEntries = try dc.managedObjectContext.fetch(entriesFetch) as! [Entry]
-            print(fetchedEntries)
+            let entries = try dc.managedObjectContext.fetch(entriesFetch) as! [Entry]
+            self.currEntry = entries.last
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch entries: \(error)")
         }
         
+        textLabel.text = currEntry?.text
     }
-    
-    func foo() -> Void {
-        print("Hello")
-    }
-
-
 }
 
