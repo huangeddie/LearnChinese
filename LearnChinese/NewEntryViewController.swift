@@ -11,7 +11,8 @@ import CoreData
 
 class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var sourcePicker: UIPickerView!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
     
     var sources: [Source] = []
     
@@ -40,7 +41,7 @@ class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func save(_ sender: Any) {
-        guard let text = textField.text else {
+        guard let text = textView.text else {
             return
         }
         let sourceIndex = sourcePicker.selectedRow(inComponent: 0)
