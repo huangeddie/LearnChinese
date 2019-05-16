@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojc-Ax-6gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1358" y="-39"/>
+            <point key="canvasLocation" x="-2243" y="-40"/>
         </scene>
         <!--Phrases of the Week-->
         <scene sceneID="tne-QT-ifu">
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-qh-4HL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chunk" rowHeight="117" id="4aK-QV-G4D" customClass="ChunkTableViewCell" customModule="LearnChinese" customModuleProvider="target">
@@ -81,22 +81,26 @@
                                         </prototypes>
                                     </tableView>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-WF-UQv">
-                                        <rect key="frame" x="0.0" y="678" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="691" width="414" height="31"/>
                                         <items>
                                             <barButtonItem title="Pinyin" style="plain" id="JTe-Gm-5RM">
                                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="BWf-On-2PS">
-                                                    <rect key="frame" x="20" y="6.5" width="51" height="31"/>
+                                                    <rect key="frame" x="20" y="0.0" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                             </barButtonItem>
                                             <barButtonItem systemItem="flexibleSpace" id="HP5-Kw-OB0"/>
                                             <barButtonItem systemItem="bookmarks" id="gjB-CM-IRZ">
                                                 <connections>
-                                                    <segue destination="j6J-Vg-aew" kind="show" id="P97-q2-tnf"/>
+                                                    <segue destination="j6J-Vg-aew" kind="show" id="2z3-J9-JxC"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem systemItem="flexibleSpace" id="9VL-TT-Hul"/>
-                                            <barButtonItem title="Item" systemItem="compose" id="hC6-LY-URG"/>
+                                            <barButtonItem title="Item" systemItem="compose" id="hC6-LY-URG">
+                                                <connections>
+                                                    <segue destination="sWL-eO-gzI" kind="presentation" id="bw2-xV-KK7"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -113,7 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Phrases of the Week" largeTitleDisplayMode="always" id="IwB-YL-Zfe">
-                        <barButtonItem key="leftBarButtonItem" title="Past Entries" id="PRm-pS-PlR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Past Entries" id="PRm-pS-PlR">
+                            <connections>
+                                <segue destination="ZtI-9l-sDL" kind="show" id="wp6-ug-paN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Notifications" id="FwA-XM-aL6">
                             <connections>
                                 <segue destination="K72-Fl-KHY" kind="show" id="En3-WB-SmP"/>
@@ -138,24 +146,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WlI-Pk-g8N">
-                                <rect key="frame" x="15" y="155" width="384" height="417"/>
+                                <rect key="frame" x="15" y="155" width="384" height="336"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oLk-pJ-ihf">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgA-K8-oND">
-                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYQ-fP-bZs">
-                                                <rect key="frame" x="335" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ivw-1N-YVY">
-                                        <rect key="frame" x="0.0" y="81" width="384" height="198"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Entry Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJU-LU-toR">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
@@ -201,6 +195,7 @@
                                                         <segments>
                                                             <segment title="Weekly"/>
                                                             <segment title="Monthly"/>
+                                                            <segment title="None"/>
                                                         </segments>
                                                     </segmentedControl>
                                                 </subviews>
@@ -208,7 +203,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CMm-Mh-KN5">
-                                        <rect key="frame" x="0.0" y="329" width="384" height="88"/>
+                                        <rect key="frame" x="0.0" y="248" width="384" height="88"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-lQ-sja">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
@@ -256,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzQ-JW-n37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226.08695652173915" y="-932.14285714285711"/>
+            <point key="canvasLocation" x="639" y="-879"/>
         </scene>
         <!--Sources-->
         <scene sceneID="uai-aa-cVf">
@@ -307,7 +302,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6J-k1-vtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479.7101449275362" y="-346.20535714285711"/>
+            <point key="canvasLocation" x="-339" y="707"/>
         </scene>
         <!--Past Entries-->
         <scene sceneID="6qT-5W-cb1">
@@ -351,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ8-Ml-U0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="337"/>
+            <point key="canvasLocation" x="-1441" y="-774"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="1WC-1X-aMC">
@@ -361,21 +356,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FKm-lh-ooV">
-                                <rect key="frame" x="15" y="103" width="384" height="300"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FKm-lh-ooV">
+                                <rect key="frame" x="15" y="103" width="384" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="43R-gd-HnF"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3O3-PD-YRx" firstAttribute="trailing" secondItem="FKm-lh-ooV" secondAttribute="trailing" constant="15" id="C1i-87-nfg"/>
-                            <constraint firstItem="FKm-lh-ooV" firstAttribute="leading" secondItem="3O3-PD-YRx" secondAttribute="leading" constant="15" id="dev-3x-rhR"/>
-                            <constraint firstItem="FKm-lh-ooV" firstAttribute="top" secondItem="3O3-PD-YRx" secondAttribute="top" constant="15" id="siV-zs-t2b"/>
+                            <constraint firstItem="FKm-lh-ooV" firstAttribute="leading" secondItem="3O3-PD-YRx" secondAttribute="leading" constant="15" id="aj3-8I-EGZ"/>
+                            <constraint firstItem="FKm-lh-ooV" firstAttribute="bottom" secondItem="3O3-PD-YRx" secondAttribute="bottom" constant="15" id="ur2-Nj-S6N"/>
+                            <constraint firstItem="FKm-lh-ooV" firstAttribute="trailing" secondItem="3O3-PD-YRx" secondAttribute="trailing" constant="-15" id="uzG-Vz-cQc"/>
+                            <constraint firstItem="FKm-lh-ooV" firstAttribute="top" secondItem="3O3-PD-YRx" secondAttribute="top" constant="15" id="x3f-P0-j5h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3O3-PD-YRx"/>
                     </view>
@@ -397,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qY-Hm-c90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="1051"/>
+            <point key="canvasLocation" x="1817" y="-40"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yoj-Ol-Eym">
@@ -415,7 +408,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmb-Rz-jrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-339" y="1051"/>
+            <point key="canvasLocation" x="909" y="-40"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textView.becomeFirstResponder()
     }
     
     @IBAction func cancel(_ sender: Any) {
