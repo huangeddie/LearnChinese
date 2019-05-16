@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C6871B3228B957E000156AF /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6871B2228B957E000156AF /* NewEntryViewController.swift */; };
 		2CD8E4D0228DE2A0003CDCAB /* PastEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */; };
+		2CD8E4D2228DE90C003CDCAB /* SourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */; };
 		2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE75789228A40770061F931 /* AppDelegate.swift */; };
 		2CE7578C228A40770061F931 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7578B228A40770061F931 /* MainViewController.swift */; };
 		2CE7578F228A40770061F931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE7578D228A40770061F931 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		2C6871B2228B957E000156AF /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEntriesTableViewController.swift; sourceTree = "<group>"; };
+		2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableViewController.swift; sourceTree = "<group>"; };
 		2CE75786228A40770061F931 /* LearnChinese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnChinese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE75789228A40770061F931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CE7578B228A40770061F931 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				2CE7578D228A40770061F931 /* Main.storyboard */,
 				2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */,
+				2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */,
 				2CE7578B228A40770061F931 /* MainViewController.swift */,
 				2C6871B2228B957E000156AF /* NewEntryViewController.swift */,
 				2CE75793228A40780061F931 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 			files = (
 				2C6871B3228B957E000156AF /* NewEntryViewController.swift in Sources */,
 				2CE7578C228A40770061F931 /* MainViewController.swift in Sources */,
+				2CD8E4D2228DE90C003CDCAB /* SourcesTableViewController.swift in Sources */,
 				2CE757BB228A53C40061F931 /* DataController.swift in Sources */,
 				2CE75792228A40770061F931 /* LearnChinese.xcdatamodeld in Sources */,
 				2CD8E4D0228DE2A0003CDCAB /* PastEntriesTableViewController.swift in Sources */,
