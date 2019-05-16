@@ -40,8 +40,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if let entry = currEntry {
-            chunks = entry.text?.components(separatedBy: "\n") ?? []
-            pinyins = entry.pinyin?.components(separatedBy: "\n") ?? []
+            chunks = entry.text?.components(separatedBy: "|") ?? []
+            pinyins = entry.pinyin?.components(separatedBy: "|") ?? []
         } else {
             chunks = []
             pinyins = []
