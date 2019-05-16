@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Entry" representedClassName="Entry" syncable="YES" codeGenerationType="class">
         <attribute name="created" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pinyin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Source" representedClassName="Source" syncable="YES" codeGenerationType="class">
@@ -9,7 +10,7 @@
         <attribute name="url" attributeType="URI" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-314.7890625" positionY="4.609375" width="128" height="73"/>
+        <element name="Entry" positionX="-314.7890625" positionY="4.609375" width="128" height="88"/>
         <element name="Source" positionX="-63" positionY="9" width="128" height="73"/>
     </elements>
 </model>

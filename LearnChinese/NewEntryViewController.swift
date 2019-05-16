@@ -32,6 +32,18 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: dc.managedObjectContext) as! Entry
         
+        let chinese = textView.text!
+        let encoded = "https://inpinyin.com/hpt/\(chinese)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
+        let url = URL(string: encoded)
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            entry.pinyin = String(bytes: data!, encoding: .utf8)
+            semaphore.signal()
+        }
+        task.resume()
+        semaphore.wait()
+        
         entry.text = text
         entry.created = Date()
         

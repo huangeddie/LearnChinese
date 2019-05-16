@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var pastEntriesButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pinyinSwitch: UISwitch!
     
@@ -42,11 +41,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let entry = currEntry {
             chunks = entry.text?.components(separatedBy: "\n") ?? []
-            pinyins = chunks
+            pinyins = entry.pinyin?.components(separatedBy: "\n") ?? []
         } else {
-            chunks = ["建最選状裏問右質昨名念済臭能季外最情。"]
-            pinyins = ["Jiàn zuì xuǎn zhuàng lǐ wèn yòu zhì zuó míng niàn jì chòu néng jì wài zuì qíng."]
+            chunks = []
+            pinyins = []
         }
+        tableView.reloadData()
     }
 }
 
