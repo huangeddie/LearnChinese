@@ -9,31 +9,13 @@
 import UIKit
 import CoreData
 
-class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-    @IBOutlet weak var sourcePicker: UIPickerView!
+class NewEntryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textView: UITextView!
-    
-    
-    var sources: [Source] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        let dc = DataController {}
-        
-        let sourcesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Source")
-        
-        do {
-            self.sources = try dc.managedObjectContext.fetch(sourcesFetch) as! [Source]
-        } catch {
-            fatalError("Failed to fetch sources: \(error)")
-        }
-        
-        sourcePicker.dataSource = self
-        sourcePicker.delegate = self
-        
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -44,8 +26,6 @@ class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
         guard let text = textView.text else {
             return
         }
-        let sourceIndex = sourcePicker.selectedRow(inComponent: 0)
-        let source = self.sources.count >= sourceIndex ? nil : self.sources[sourceIndex]
         
         let dc = DataController {}
         
@@ -53,7 +33,6 @@ class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         entry.text = text
         entry.created = Date()
-        entry.source = source
         
         do {
             try dc.managedObjectContext.save()
@@ -73,20 +52,5 @@ class NewEntryViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    // MARK: - UIPickerDataSource
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.sources.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.sources[row].name
-    }
 
 }
