@@ -11,6 +11,7 @@ import CoreData
 
 class MainViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var pastEntriesButton: UIButton!
     
     var currEntry: Entry?
     override func viewDidLoad() {
@@ -36,7 +37,9 @@ class MainViewController: UIViewController {
             fatalError("Failed to fetch entries: \(error)")
         }
         
-        textLabel.text = currEntry?.text
+        textLabel.text = currEntry?.text ?? "Add an entry"
+        
+        pastEntriesButton.isHidden = currEntry == nil
     }
 }
 
