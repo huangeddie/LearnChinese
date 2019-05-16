@@ -37,8 +37,10 @@ class MainViewController: UIViewController {
             fatalError("Failed to fetch entries: \(error)")
         }
         
-        textLabel.text = currEntry?.text ?? "Add an entry"
-        
+        if let text = currEntry?.text {
+            textLabel.text = text
+        }
+ 
         pastEntriesButton.isHidden = currEntry == nil
     }
 }
