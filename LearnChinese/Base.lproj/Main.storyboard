@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1358" y="-39"/>
         </scene>
-        <!--Phrase of the Week-->
+        <!--Phrases of the Week-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="LearnChinese" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,31 +34,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ynA-vQ-Z1l">
-                                <rect key="frame" x="15" y="155" width="384" height="692"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ynA-vQ-Z1l">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-qh-4HL">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="442"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="4aK-QV-G4D">
-                                                <rect key="frame" x="0.0" y="28" width="384" height="92"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chunk" rowHeight="117" id="4aK-QV-G4D" customClass="ChunkTableViewCell" customModule="LearnChinese" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="117"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aK-QV-G4D" id="52f-d7-uVE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="91.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VRV-ET-6nP">
-                                                            <rect key="frame" x="8" y="8" width="368" height="75.5"/>
+                                                            <rect key="frame" x="20" y="11" width="344" height="95"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="建最選状裏問右質昨名念済臭能季外最情。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXg-DG-2ha">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="46.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="66"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jiàn zuì xuǎn zhuàng lǐ wèn yòu zhì zuó míng niàn jì chòu néng jì wài zuì qíng." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16U-7n-1CK">
-                                                                    <rect key="frame" x="0.0" y="46.5" width="368" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="66" width="344" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -73,79 +73,56 @@
                                                         <constraint firstAttribute="trailingMargin" secondItem="VRV-ET-6nP" secondAttribute="trailing" id="v8B-0Y-e81"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="chunk" destination="cXg-DG-2ha" id="CKh-zB-Bra"/>
+                                                    <outlet property="pinyin" destination="16U-7n-1CK" id="G7l-45-1Hv"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-fn-h7x">
-                                        <rect key="frame" x="0.0" y="462" width="384" height="54.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8n-PX-6r6">
-                                                <rect key="frame" x="0.0" y="12.5" width="82" height="30"/>
-                                                <state key="normal" title="Past Entries"/>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-WF-UQv">
+                                        <rect key="frame" x="0.0" y="678" width="414" height="44"/>
+                                        <items>
+                                            <barButtonItem title="Pinyin" style="plain" id="JTe-Gm-5RM">
+                                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="BWf-On-2PS">
+                                                    <rect key="frame" x="20" y="6.5" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="flexibleSpace" id="HP5-Kw-OB0"/>
+                                            <barButtonItem systemItem="bookmarks" id="gjB-CM-IRZ">
                                                 <connections>
-                                                    <segue destination="ZtI-9l-sDL" kind="show" id="ccy-d3-fbI"/>
+                                                    <segue destination="j6J-Vg-aew" kind="show" id="P97-q2-tnf"/>
                                                 </connections>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kML-7x-CeC">
-                                                <rect key="frame" x="335" y="0.0" width="49" height="54.5"/>
-                                                <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWf-On-2PS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                    </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinyin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-yL-waj">
-                                                        <rect key="frame" x="0.0" y="41" width="49" height="13.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="njS-iU-SXb">
-                                        <rect key="frame" x="0.0" y="536.5" width="384" height="155.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kel-SL-5yh">
-                                                <rect key="frame" x="0.0" y="57.5" width="384" height="41"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                                <state key="normal" title="New Entry"/>
-                                                <connections>
-                                                    <segue destination="sWL-eO-gzI" kind="presentation" id="fkq-ka-P4d"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="flexibleSpace" id="9VL-TT-Hul"/>
+                                            <barButtonItem title="Item" systemItem="compose" id="hC6-LY-URG"/>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="njS-iU-SXb" firstAttribute="width" secondItem="ynA-vQ-Z1l" secondAttribute="width" id="bBG-FJ-ikV"/>
-                                    <constraint firstItem="Zpk-fn-h7x" firstAttribute="width" secondItem="ynA-vQ-Z1l" secondAttribute="width" id="rEe-ff-5eE"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ynA-vQ-Z1l" secondAttribute="bottom" constant="15" id="7hM-Eh-oul"/>
+                            <constraint firstItem="ynA-vQ-Z1l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0wv-9V-cVu"/>
+                            <constraint firstItem="ynA-vQ-Z1l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LBU-Rf-tbc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ynA-vQ-Z1l" secondAttribute="trailing" id="XiZ-Fm-HEA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ynA-vQ-Z1l" secondAttribute="bottom" id="adM-rD-cr8"/>
                             <constraint firstItem="ynA-vQ-Z1l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="faL-bM-H8l"/>
-                            <constraint firstItem="ynA-vQ-Z1l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="jOD-4x-qeH"/>
-                            <constraint firstItem="ynA-vQ-Z1l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="tdK-4j-MJL"/>
-                            <constraint firstItem="ynA-vQ-Z1l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="xk4-1p-SpD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Phrase of the Week" largeTitleDisplayMode="always" id="IwB-YL-Zfe">
-                        <barButtonItem key="leftBarButtonItem" title="Notifications" id="FwA-XM-aL6">
+                    <navigationItem key="navigationItem" title="Phrases of the Week" largeTitleDisplayMode="always" id="IwB-YL-Zfe">
+                        <barButtonItem key="leftBarButtonItem" title="Past Entries" id="PRm-pS-PlR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Notifications" id="FwA-XM-aL6">
                             <connections>
                                 <segue destination="K72-Fl-KHY" kind="show" id="En3-WB-SmP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sources" id="gjB-CM-IRZ">
-                            <connections>
-                                <segue destination="j6J-Vg-aew" kind="show" id="P97-q2-tnf"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pastEntriesButton" destination="o8n-PX-6r6" id="Rzn-M0-7cI"/>
+                        <outlet property="pinyinSwitch" destination="BWf-On-2PS" id="Gsq-B0-OE9"/>
+                        <outlet property="tableView" destination="0Ac-qh-4HL" id="zP9-Pb-EGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
