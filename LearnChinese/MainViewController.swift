@@ -26,6 +26,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         update()
     }
+    @IBAction func pinyinSwitched(_ sender: Any) {
+        tableView.reloadData()
+    }
     
     private func update() {
         let dc = DataController {}
@@ -65,7 +68,13 @@ extension MainViewController {
         let phrase = phrases[indexPath.row]
         let pinyin = pinyins[indexPath.row]
         cell.phrase.text = phrase
-        cell.pinyin.text = pinyin
+        
+        if pinyinSwitch.isOn {
+            cell.pinyin.text = pinyin
+        } else {
+            cell.pinyin.text = nil
+        }
+        
         
         return cell
     }
