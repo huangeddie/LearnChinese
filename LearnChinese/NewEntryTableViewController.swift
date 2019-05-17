@@ -29,9 +29,9 @@ class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func save(_ sender: Any) {
         let chinese = phrases.joined(separator: "|")
         
-        let dc = DataController {}
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: dc.managedObjectContext) as! Entry
+        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: appDelegate.persistentContainer.viewContext) as! Entry
         
         let encoded = "https://inpinyin.com/hpt/\(chinese)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
         let url = URL(string: encoded)
@@ -47,11 +47,7 @@ class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
         entry.text = chinese
         entry.created = Date()
         
-        do {
-            try dc.managedObjectContext.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
+        appDelegate.saveContext()
         
         dismiss(animated: true, completion: nil)
     }

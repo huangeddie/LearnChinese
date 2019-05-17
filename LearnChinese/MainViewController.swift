@@ -31,12 +31,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func update() {
-        let dc = DataController {}
         
         let entriesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         do {
-            let entries = try dc.managedObjectContext.fetch(entriesFetch) as! [Entry]
+            let entries = try appDelegate.persistentContainer.viewContext.fetch(entriesFetch) as! [Entry]
             self.currEntry = entries.last
         } catch {
             fatalError("Failed to fetch entries: \(error)")

@@ -12,7 +12,6 @@ import CoreData
 class PastEntriesTableViewController: UITableViewController {
 
     var entries: [Entry] = []
-    let dc = DataController{}
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +22,9 @@ class PastEntriesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         let entriesFetch: NSFetchRequest<Entry> = Entry.fetchRequest()
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         do {
-            self.entries = try dc.managedObjectContext.fetch(entriesFetch)
+            self.entries = try appDelegate.persistentContainer.viewContext.fetch(entriesFetch)
         } catch {
             fatalError("Failed to fetch entries: \(error)")
         }
@@ -85,12 +84,9 @@ class PastEntriesTableViewController: UITableViewController {
             // Delete the row from the data source
             
             let entry = entries[indexPath.row]
-            dc.managedObjectContext.delete(entry)
-            do {
-                try dc.managedObjectContext.save()
-            } catch {
-                fatalError("Failed to delete entry")
-            }
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.persistentContainer.viewContext.delete(entry)
+            appDelegate.saveContext()
             
             entries.remove(at: indexPath.row)
             

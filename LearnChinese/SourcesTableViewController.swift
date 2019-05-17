@@ -12,7 +12,6 @@ import CoreData
 class SourcesTableViewController: UITableViewController {
     
     var sources: [Source] = []
-    let dc = DataController {}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,10 @@ class SourcesTableViewController: UITableViewController {
     func update() -> Void {
         let fetchRequest: NSFetchRequest<Source> = Source.fetchRequest()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         do {
-            self.sources = try dc.managedObjectContext.fetch(fetchRequest)
+            self.sources = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
         } catch {
             fatalError("Failed to fetch entries: \(error)")
         }
@@ -56,16 +57,14 @@ class SourcesTableViewController: UITableViewController {
             
             let url = URL(string: alert.textFields![1].text!)
             
-            let source = NSEntityDescription.insertNewObject(forEntityName: "Source", into: self.dc.managedObjectContext) as! Source
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            let source = NSEntityDescription.insertNewObject(forEntityName: "Source", into: appDelegate.persistentContainer.viewContext) as! Source
             
             source.name = name
             source.url = url
             
-            do {
-                try self.dc.managedObjectContext.save()
-            } catch {
-                fatalError("Failure to save context: \(error)")
-            }
+            appDelegate.saveContext()
             self.update()
         }
         
@@ -117,12 +116,10 @@ class SourcesTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             let source = sources[indexPath.row]
-            dc.managedObjectContext.delete(source)
-            do {
-                try dc.managedObjectContext.save()
-            } catch {
-                fatalError("Failed to delete source")
-            }
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.persistentContainer.viewContext.delete(source)
+            appDelegate.saveContext()
             
             sources.remove(at: indexPath.row)
             
