@@ -116,11 +116,11 @@
 				2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */,
 				2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */,
 				2CD8E4D5228E2D4D003CDCAB /* NewEntryTableViewController.swift */,
+				2CE75789228A40770061F931 /* AppDelegate.swift */,
 				2CE75793228A40780061F931 /* Assets.xcassets */,
 				2CE75795228A40780061F931 /* LaunchScreen.storyboard */,
 				2CE75798228A40780061F931 /* Info.plist */,
 				2CE75790228A40770061F931 /* LearnChinese.xcdatamodeld */,
-				2CE75789228A40770061F931 /* AppDelegate.swift */,
 			);
 			path = LearnChinese;
 			sourceTree = "<group>";

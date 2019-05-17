@@ -17,6 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let userDefaults = UserDefaults.standard
+        
+        if !userDefaults.bool(forKey: "launchedBefore") {
+            
+            let context = persistentContainer.viewContext
+            
+            // Clear sources
+            
+            let sourcesFetch = Source.fetchRequest() as NSFetchRequest<Source>
+            do {
+                let sources = try context.fetch(sourcesFetch)
+                for source in sources {
+                    context.delete(source)
+                }
+                
+            } catch {
+                fatalError("Failed to fetch entries: \(error)")
+            }
+            
+            
+            // Give some sources
+            
+            let names = ["Google Translate", "eChineseLearning"]
+            let urls = ["https://translate.google.com", "https://www.echineselearning.com/resources/speak-chinese/dialogue.html"]
+            
+            for (name, url) in zip(names, urls) {
+                let source = NSEntityDescription.insertNewObject(forEntityName: "Source", into: context) as! Source
+                source.name = name
+                source.url = URL(string: url)
+            }
+            saveContext()
+            
+            userDefaults.set(true, forKey: "launchedBefore")
+        }
+        
+        
         return true
     }
 
