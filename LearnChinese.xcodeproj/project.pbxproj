@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CD8E4D0228DE2A0003CDCAB /* PastEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */; };
 		2CD8E4D2228DE90C003CDCAB /* SourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */; };
-		2CD8E4D4228E10C2003CDCAB /* ChunkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4D3228E10C2003CDCAB /* ChunkTableViewCell.swift */; };
+		2CD8E4D4228E10C2003CDCAB /* PhraseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4D3228E10C2003CDCAB /* PhraseTableViewCell.swift */; };
 		2CD8E4D6228E2D4D003CDCAB /* NewEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8E4D5228E2D4D003CDCAB /* NewEntryTableViewController.swift */; };
 		2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE75789228A40770061F931 /* AppDelegate.swift */; };
 		2CE7578C228A40770061F931 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7578B228A40770061F931 /* MainViewController.swift */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEntriesTableViewController.swift; sourceTree = "<group>"; };
 		2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableViewController.swift; sourceTree = "<group>"; };
-		2CD8E4D3228E10C2003CDCAB /* ChunkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkTableViewCell.swift; sourceTree = "<group>"; };
+		2CD8E4D3228E10C2003CDCAB /* PhraseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseTableViewCell.swift; sourceTree = "<group>"; };
 		2CD8E4D5228E2D4D003CDCAB /* NewEntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryTableViewController.swift; sourceTree = "<group>"; };
 		2CE75786228A40770061F931 /* LearnChinese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnChinese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE75789228A40770061F931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE7578D228A40770061F931 /* Main.storyboard */,
-				2CD8E4D3228E10C2003CDCAB /* ChunkTableViewCell.swift */,
+				2CD8E4D3228E10C2003CDCAB /* PhraseTableViewCell.swift */,
 				2CD8E4CF228DE2A0003CDCAB /* PastEntriesTableViewController.swift */,
 				2CD8E4D1228DE90C003CDCAB /* SourcesTableViewController.swift */,
 				2CE7578B228A40770061F931 /* MainViewController.swift */,
@@ -281,7 +281,7 @@
 				2CE75792228A40770061F931 /* LearnChinese.xcdatamodeld in Sources */,
 				2CD8E4D0228DE2A0003CDCAB /* PastEntriesTableViewController.swift in Sources */,
 				2CE7578A228A40770061F931 /* AppDelegate.swift in Sources */,
-				2CD8E4D4228E10C2003CDCAB /* ChunkTableViewCell.swift in Sources */,
+				2CD8E4D4228E10C2003CDCAB /* PhraseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

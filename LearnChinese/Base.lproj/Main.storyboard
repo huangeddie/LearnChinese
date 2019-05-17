@@ -38,10 +38,10 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-qh-4HL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chunk" rowHeight="117" id="4aK-QV-G4D" customClass="ChunkTableViewCell" customModule="LearnChinese" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="117" id="4aK-QV-G4D" customClass="PhraseTableViewCell" customModule="LearnChinese" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="117"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aK-QV-G4D" id="52f-d7-uVE">
@@ -74,18 +74,18 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="chunk" destination="cXg-DG-2ha" id="CKh-zB-Bra"/>
+                                                    <outlet property="phrase" destination="cXg-DG-2ha" id="CKh-zB-Bra"/>
                                                     <outlet property="pinyin" destination="16U-7n-1CK" id="G7l-45-1Hv"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-WF-UQv">
-                                        <rect key="frame" x="0.0" y="691" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="678" width="414" height="44"/>
                                         <items>
                                             <barButtonItem title="Pinyin" style="plain" id="JTe-Gm-5RM">
                                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="BWf-On-2PS">
-                                                    <rect key="frame" x="20" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="20" y="6.5" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                             </barButtonItem>
@@ -375,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="102" id="PQo-tx-wMf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="102" id="PQo-tx-wMf">
                                 <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQo-tx-wMf" id="ab2-jR-uvm">

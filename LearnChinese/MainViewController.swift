@@ -14,7 +14,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var pinyinSwitch: UISwitch!
     
     var currEntry: Entry?
-    var chunks: [String] = []
+    var phrases: [String] = []
     var pinyins: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +40,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if let entry = currEntry {
-            chunks = entry.text?.components(separatedBy: "|") ?? []
+            phrases = entry.text?.components(separatedBy: "|") ?? []
             pinyins = entry.pinyin?.components(separatedBy: "|") ?? []
         } else {
-            chunks = []
+            phrases = []
             pinyins = []
         }
         tableView.reloadData()
@@ -55,16 +55,16 @@ extension MainViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return chunks.count
+            return phrases.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chunk", for: indexPath) as! ChunkTableViewCell
-        let chunk = chunks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "phrase", for: indexPath) as! PhraseTableViewCell
+        let phrase = phrases[indexPath.row]
         let pinyin = pinyins[indexPath.row]
-        cell.chunk.text = chunk
+        cell.phrase.text = phrase
         cell.pinyin.text = pinyin
         
         return cell

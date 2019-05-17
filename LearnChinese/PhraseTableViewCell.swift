@@ -1,5 +1,5 @@
 //
-//  ChunkTableViewCell.swift
+//  PhraseTableViewCell.swift
 //  LearnChinese
 //
 //  Created by Eddie Huang on 5/16/19.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ChunkTableViewCell: UITableViewCell {
-    @IBOutlet weak var chunk: UILabel!
+class PhraseTableViewCell: UITableViewCell {
+    @IBOutlet weak var phrase: UILabel!
     @IBOutlet weak var pinyin: UILabel!
     
     override func awakeFromNib() {

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class NewEntryTableViewController: UITableViewController {
 
-    var chunks: [String] = []
+    var phrases: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,12 @@ class NewEntryTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func save(_ sender: Any) {
-        guard let text = textView.text else {
-            return
-        }
+        let chinese = phrases.joined(separator: "|")
         
         let dc = DataController {}
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: dc.managedObjectContext) as! Entry
         
-        let chinese = textView.text!
         let encoded = "https://inpinyin.com/hpt/\(chinese)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
         let url = URL(string: encoded)
         let semaphore = DispatchSemaphore(value: 0)
@@ -46,7 +44,7 @@ class NewEntryTableViewController: UITableViewController {
         task.resume()
         semaphore.wait()
         
-        entry.text = text
+        entry.text = chinese
         entry.created = Date()
         
         do {
@@ -66,7 +64,7 @@ class NewEntryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return chunks.count + 1
+        return phrases.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
