@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewEntryTableViewController: UITableViewController {
+class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
 
     var phrases: [String] = []
     
@@ -68,40 +68,49 @@ class NewEntryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "phrase", for: indexPath) as! NewPhraseTableViewCell
 
         // Configure the cell...
+        cell.phraseField.delegate = self
+        
+        if indexPath.row < phrases.count {
+            cell.phraseField.text = phrases[indexPath.row]
+            cell.phraseField.isUserInteractionEnabled = false
+        } else {
+            cell.phraseField.text = nil
+            cell.phraseField.isUserInteractionEnabled = true
+        }
 
         return cell
     }
 
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if indexPath.row == phrases.count {
+            return false
+        } else {
+            return true
+        }
     }
-    */
+ 
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            phrases.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let phrase = phrases.remove(at: fromIndexPath.row)
+        phrases.insert(phrase, at: to.row)
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -121,4 +130,15 @@ class NewEntryTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+extension NewEntryTableViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        textField.isUserInteractionEnabled = false
+        phrases.append(textField.text!)
+        tableView.reloadData()
+        return true
+    }
 }

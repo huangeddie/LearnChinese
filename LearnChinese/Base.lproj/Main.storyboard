@@ -375,27 +375,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="102" id="PQo-tx-wMf">
-                                <rect key="frame" x="0.0" y="28" width="414" height="102"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="110" id="PQo-tx-wMf" customClass="NewPhraseTableViewCell" customModule="LearnChinese" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQo-tx-wMf" id="ab2-jR-uvm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQo-tx-wMf" id="ab2-jR-uvm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="中文" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-ou-zZY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                                            <rect key="frame" x="15" y="15" width="384" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="x0p-v9-4O7"/>
+                                            </constraints>
                                             <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="gX1-ou-zZY" secondAttribute="trailing" id="8Qm-3l-OIP"/>
-                                        <constraint firstAttribute="bottom" secondItem="gX1-ou-zZY" secondAttribute="bottom" id="Gg4-yq-ixz"/>
-                                        <constraint firstItem="gX1-ou-zZY" firstAttribute="leading" secondItem="ab2-jR-uvm" secondAttribute="leading" id="JY6-Ro-bNW"/>
-                                        <constraint firstItem="gX1-ou-zZY" firstAttribute="top" secondItem="ab2-jR-uvm" secondAttribute="top" id="kcA-RK-WwA"/>
+                                        <constraint firstAttribute="trailing" secondItem="gX1-ou-zZY" secondAttribute="trailing" constant="15" id="8Qm-3l-OIP"/>
+                                        <constraint firstAttribute="bottom" secondItem="gX1-ou-zZY" secondAttribute="bottom" constant="15" id="Gg4-yq-ixz"/>
+                                        <constraint firstItem="gX1-ou-zZY" firstAttribute="leading" secondItem="ab2-jR-uvm" secondAttribute="leading" constant="15" id="JY6-Ro-bNW"/>
+                                        <constraint firstItem="gX1-ou-zZY" firstAttribute="top" secondItem="ab2-jR-uvm" secondAttribute="top" constant="15" id="kcA-RK-WwA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="phraseField" destination="gX1-ou-zZY" id="bZf-vV-f2D"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
