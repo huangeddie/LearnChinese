@@ -152,9 +152,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
         
-        //            dateComponents.weekday = 1  // Sunday
-        //            dateComponents.hour = 12    // 12:00 hours
-        dateComponents.second = 0
+        dateComponents.weekday = 1  // Sunday
+        dateComponents.hour = 12    // 12:00 hours
         
         // Create the trigger as a repeating event.
         let trigger = UNCalendarNotificationTrigger(
