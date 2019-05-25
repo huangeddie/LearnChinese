@@ -39,7 +39,7 @@ class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
         let translateURL = URL(string: translateRaw)!
         var translateRequest = URLRequest(url: translateURL)
         translateRequest.httpMethod = "POST"
-        translateRequest.setValue("Bearer ya29.c.EloUBw18F38qwZf8MnhxhxYUTYPMsJH2XdSYpOqHzYY7dOByBGF53VEvvmY1SA9FvPI9ME6FeKMoyDgvd8CKerfqUe0-ASkfOcGqiGVLr8pU3QuJ0aVbHDoBURM",
+        translateRequest.setValue("Bearer AIzaSyDjGLzklbG2Vi4bWh6Se2LFTWZ_vuXD-_s",
                          forHTTPHeaderField: "Authorization")
         translateRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
