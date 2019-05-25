@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Give some sources
             
             let names = ["Google Translate", "eChineseLearning"]
-            let urls = ["https://translate.google.com", "https://www.echineselearning.com/resources/speak-chinese/dialogue.html"]
+            let urls = ["googletranslate://", "https://www.echineselearning.com/resources/speak-chinese/dialogue.html"]
             
             for (name, url) in zip(names, urls) {
                 let source = NSEntityDescription.insertNewObject(forEntityName: "Source", into: context) as! Source
