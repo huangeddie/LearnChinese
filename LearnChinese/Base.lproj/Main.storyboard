@@ -132,11 +132,6 @@
                                 <segue destination="ZtI-9l-sDL" kind="show" id="wp6-ug-paN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Notifications" id="FwA-XM-aL6">
-                            <connections>
-                                <segue destination="K72-Fl-KHY" kind="show" id="En3-WB-SmP"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pinyinSwitch" destination="BWf-On-2PS" id="Gsq-B0-OE9"/>
@@ -156,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WlI-Pk-g8N">
-                                <rect key="frame" x="15" y="155" width="384" height="336"/>
+                                <rect key="frame" x="15" y="59" width="384" height="336"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ivw-1N-YVY">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="198"/>
