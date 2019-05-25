@@ -33,32 +33,6 @@ class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: appDelegate.persistentContainer.viewContext) as! Entry
         
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let translateRaw = "https://translation.googleapis.com/v3beta1/projects/mysite-202703/locations/global:translateText?target_language_code=en&contents=\(chinese)&source_language_code=zh-CN".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        let translateURL = URL(string: translateRaw)!
-        var translateRequest = URLRequest(url: translateURL)
-        translateRequest.httpMethod = "POST"
-        translateRequest.setValue("Bearer AIzaSyDjGLzklbG2Vi4bWh6Se2LFTWZ_vuXD-_s",
-                         forHTTPHeaderField: "Authorization")
-        translateRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let translateTask =  URLSession.shared.dataTask(with: translateRequest) { (data, response, error) in
-            if let data = data {
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                let translations = json?["translations"] as? [[String: Any]]
-                entry.translation = translations?[0]["translatedText"] as? String
-            } else {
-                print("Translate error: \(error)")
-            }
-            semaphore.signal()
-        }
-        
-        translateTask.resume()
-        
-        // Wait for both translation
-        semaphore.wait()
-        
         entry.text = chinese
         entry.pinyin = chinese.applyingTransform(.toLatin, reverse: false)
         entry.created = Date()
