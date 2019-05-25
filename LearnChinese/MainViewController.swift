@@ -15,7 +15,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var currEntry: Entry?
     var phrases: [String] = []
-    var pinyins: [String] = []
+    var pinyins: [String]? = []
+    var translations: [String]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -43,10 +45,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let entry = currEntry {
             phrases = entry.text?.components(separatedBy: "|") ?? []
-            pinyins = entry.pinyin?.components(separatedBy: "|") ?? []
+            pinyins = entry.pinyin?.components(separatedBy: "|") ?? nil
+            translations = entry.translation?.components(separatedBy: "|") ?? nil
         } else {
             phrases = []
             pinyins = []
+            translations = []
         }
         tableView.reloadData()
     }
@@ -65,15 +69,18 @@ extension MainViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "phrase", for: indexPath) as! PhraseTableViewCell
         let phrase = phrases[indexPath.row]
-        let pinyin = pinyins[indexPath.row]
+        let pinyin = pinyins?[indexPath.row]
+        let translation = translations?[indexPath.row]
+        
         cell.phrase.text = phrase
         
         if pinyinSwitch.isOn {
             cell.pinyin.text = pinyin
+            cell.translation.text = translation
         } else {
             cell.pinyin.text = nil
+            cell.translation.text = nil
         }
-        
         
         return cell
     }

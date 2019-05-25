@@ -11,6 +11,7 @@ import UIKit
 class PhraseTableViewCell: UITableViewCell {
     @IBOutlet weak var phrase: UILabel!
     @IBOutlet weak var pinyin: UILabel!
+    @IBOutlet weak var translation: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

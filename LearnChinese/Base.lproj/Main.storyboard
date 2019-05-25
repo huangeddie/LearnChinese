@@ -41,26 +41,32 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="117" id="4aK-QV-G4D" customClass="PhraseTableViewCell" customModule="LearnChinese" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="117"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phrase" rowHeight="160" id="4aK-QV-G4D" customClass="PhraseTableViewCell" customModule="LearnChinese" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aK-QV-G4D" id="52f-d7-uVE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VRV-ET-6nP">
-                                                            <rect key="frame" x="20" y="11" width="374" height="95"/>
+                                                            <rect key="frame" x="20" y="11" width="374" height="138"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="建最選状裏問右質昨名念済臭能季外最情。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXg-DG-2ha">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jiàn zuì xuǎn zhuàng lǐ wèn yòu zhì zuó míng niàn jì chòu néng jì wài zuì qíng." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16U-7n-1CK">
-                                                                    <rect key="frame" x="0.0" y="66" width="374" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="80" width="374" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="In the most selection of the case, I asked the right person to read the scent of the last day." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-5k-ZYf">
+                                                                    <rect key="frame" x="0.0" y="109" width="374" height="29"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -76,6 +82,7 @@
                                                 <connections>
                                                     <outlet property="phrase" destination="cXg-DG-2ha" id="CKh-zB-Bra"/>
                                                     <outlet property="pinyin" destination="16U-7n-1CK" id="G7l-45-1Hv"/>
+                                                    <outlet property="translation" destination="ZgK-5k-ZYf" id="yrP-Z5-3Hx"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

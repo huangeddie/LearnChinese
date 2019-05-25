@@ -33,18 +33,34 @@ class NewEntryTableViewController: UITableViewController, UITextFieldDelegate {
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: appDelegate.persistentContainer.viewContext) as! Entry
         
-        let encoded = "https://inpinyin.com/hpt/\(chinese)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        let url = URL(string: encoded)
         let semaphore = DispatchSemaphore(value: 0)
         
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            entry.pinyin = String(bytes: data!, encoding: .utf8)
+        let translateRaw = "https://translation.googleapis.com/v3beta1/projects/mysite-202703/locations/global:translateText?target_language_code=en&contents=\(chinese)&source_language_code=zh-CN".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
+        let translateURL = URL(string: translateRaw)!
+        var translateRequest = URLRequest(url: translateURL)
+        translateRequest.httpMethod = "POST"
+        translateRequest.setValue("Bearer ya29.c.EloUBw18F38qwZf8MnhxhxYUTYPMsJH2XdSYpOqHzYY7dOByBGF53VEvvmY1SA9FvPI9ME6FeKMoyDgvd8CKerfqUe0-ASkfOcGqiGVLr8pU3QuJ0aVbHDoBURM",
+                         forHTTPHeaderField: "Authorization")
+        translateRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let translateTask =  URLSession.shared.dataTask(with: translateRequest) { (data, response, error) in
+            if let data = data {
+                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                let translations = json?["translations"] as? [[String: Any]]
+                entry.translation = translations?[0]["translatedText"] as? String
+            } else {
+                print("Translate error: \(error)")
+            }
             semaphore.signal()
         }
-        task.resume()
+        
+        translateTask.resume()
+        
+        // Wait for both translation
         semaphore.wait()
         
         entry.text = chinese
+        entry.pinyin = chinese.applyingTransform(.toLatin, reverse: false)
         entry.created = Date()
         
         appDelegate.saveContext()
